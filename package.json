@@ -16,7 +16,7 @@
     "format": "prettier --write .",
     "generate:css": "tailwindcss -o ./app/styles/tailwind.css",
     "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint .",
-    "setup": "npm run generate-client && npm run migrate",
+    "setup": "prisma generate && prisma migrate deploy",
     "start": "cross-env NODE_ENV=production node ./build/server.js",
     "start:mocks": "cross-env NODE_ENV=production node --require ./mocks --require dotenv/config ./build/server.js",
     "test": "vitest",
@@ -27,7 +27,7 @@
     "validate": "run-p \"test -- --run\" lint typecheck test:e2e:run",
     "generate-client": "prisma generate --data-proxy",
     "migrate": "DATABASE_URL=\"$MIGRATE_DATABASE_URL\" prisma migrate deploy",
-    "build:vercel": "npm run setup"
+    "build:vercel": "yarn generate-client && yarn migrate && yarn build"
   },
   "prettier": {},
   "eslintIgnore": [
