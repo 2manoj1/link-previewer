@@ -1,6 +1,22 @@
 # Link Previewer
 
-[Link Previewer Demo App](https://link-previewer-sigma.vercel.app)
+[Link Previewer Demo App -> Click here](https://link-previewer-sigma.vercel.app)
+
+<table>
+  <tr>
+    <th>Page 1</th>
+    <th>Page 2</th>
+  </tr>
+  <tr>
+    <td><img width="1512" alt="Link Preview page 1" src="https://user-images.githubusercontent.com/15128569/182340321-dbd6db9e-1535-4d8e-8658-5db7cf44ccba.png"></td>
+     <td><img width="1512" alt="Link Preview Details page" src="https://user-images.githubusercontent.com/15128569/182340417-ab327b8f-9939-477f-a5cf-e1034c259297.png"></td>
+  </tr>
+</table>
+
+Demo: 
+
+https://user-images.githubusercontent.com/15128569/182339581-bc769602-37d5-46f8-92be-976944757791.mov
+
 
 Build using [Remix Stacks](https://remix.run/stacks).
 
