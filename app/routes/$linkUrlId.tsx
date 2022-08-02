@@ -1,4 +1,4 @@
-import type { LoaderFunction } from "@remix-run/node"; // or cloudflare/deno
+import type { LoaderFunction, MetaFunction } from "@remix-run/node"; // or cloudflare/deno
 import { json } from "@remix-run/node"; // or cloudflare/deno
 import { useLoaderData } from "@remix-run/react";
 
@@ -16,7 +16,13 @@ export const loader: LoaderFunction = async ({ params }) => {
   return json<LoaderData>(await getLoaderData(params.linkUrlId ?? ""));
 };
 
-export default function Product() {
+export const meta: MetaFunction = () => ({
+  charset: "utf-8",
+  title: "Link Previewer",
+  viewport: "width=device-width,initial-scale=1",
+});
+
+export default function LinkViewerPage() {
   const linkPreviewerDetails = useLoaderData<LoaderData>();
 
   if (!linkPreviewerDetails) return <div>404</div>;
